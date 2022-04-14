@@ -93,3 +93,47 @@ Second to last element: my_list[-2]
 
 Third to last element: my_list[-3]
 '''
+
+def update_item(list_number, item_number, new_item):
+    shopping_lists[list_number][item_number] = new_item
+
+def view_item(list_number, item_number):
+    print(shopping_lists[list_number][item_number])
+
+def view_list(list):
+    count = 0
+    list_string = ''
+    for item in shopping_lists[list]:
+        if count < 2:
+            list_string += item + ', '
+        else:
+            list_string += (item)
+
+        count += 1
+    print(list_string)
+
+shopping_lists = [
+    ['toothpaste', 'q-tips', 'milk'],
+    ['milk', 'candy', 'apples'],
+    ['planner', 'pencils', 'q-tips']
+    ]
+
+user_choice = input("Choose 1 = update item, 2 = view item, or 3 = view list: ")
+
+if user_choice == '1':
+    list_choice = int(input("Which list number contains an item you want to change? ")) - 1
+    item_choice = int(input("Which item number would you like to update? ")) - 1
+    new_item = input("What item do you want to add? ")
+
+    update_item(list_choice, item_choice, new_item)
+
+elif user_choice == '2':
+    list_choice = int(input("Which list number contains an item you want to view? ")) - 1
+    item_choice = int(input("Which item number would you like to view? ")) - 1
+
+    view_item(list_choice, item_choice)
+
+elif user_choice == '3':
+    list_choice = int(input("Which list number do you want to view? ")) - 1
+
+    view_list(list_choice)

@@ -80,9 +80,7 @@ For each of the following problems, you will write a function that will draw the
         *****
     
 '''
-# Write the code for your custom function below:
+
 def my_function():
-    # replace 'pass' with your code
     pass
 
-draw_7
